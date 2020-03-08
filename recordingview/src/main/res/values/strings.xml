@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RecordingView</string>
+    <string name="default_sliding_text">Slide To Cancel</string>
+    <string name="default_idle_text">Tap &amp; Hold To Start</string>
+</resources>

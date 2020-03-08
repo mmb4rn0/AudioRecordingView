@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:maxHeight="@dimen/dp60"
+    android:minHeight="@dimen/dp40">
+
+    <View
+        android:id="@+id/viewRecordSlider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp2"
+        android:layout_marginEnd="@dimen/dp8"
+        android:layout_marginBottom="@dimen/dp2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/recordBtn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <io.supercharge.shimmerlayout.ShimmerLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp18"
+        android:layout_marginRight="@dimen/dp18"
+        app:layout_constraintBottom_toBottomOf="@id/viewRecordSlider"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@id/chronometer"
+        app:layout_constraintRight_toRightOf="@id/viewRecordSlider"
+        app:layout_constraintTop_toTopOf="@id/viewRecordSlider"
+        app:shimmer_animation_duration="1500"
+        app:shimmer_color="@color/colorWhite"
+        app:shimmer_reverse_animation="true">
+
+        <TextView
+            android:id="@+id/tvSlidingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_left_arrow"
+            android:drawableLeft="@drawable/ic_left_arrow"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingEnd="@dimen/dp8"
+            android:paddingRight="@dimen/dp8"
+            android:text="@string/default_sliding_text"
+            android:textColor="@color/colorDefaultText"
+            android:textSize="@dimen/sp16"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvIdleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:drawableRight="@drawable/ic_right_arrow"
+            android:gravity="center"
+            android:text="@string/default_idle_text"
+            android:textColor="@color/colorDefaultText"
+            android:textSize="@dimen/sp16" />
+    </io.supercharge.shimmerlayout.ShimmerLayout>
+
+    <ImageView
+        android:id="@+id/ivSwissView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginBottom="@dimen/dp8"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/viewRecordSlider"
+        app:layout_constraintDimensionRatio="W, 1:1"
+        app:layout_constraintLeft_toLeftOf="@id/viewRecordSlider"
+        app:layout_constraintTop_toTopOf="@id/viewRecordSlider" />
+
+    <ImageView
+        android:id="@+id/ivIndicatorMic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp18"
+        android:layout_marginLeft="@dimen/dp18"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/viewRecordSlider"
+        app:layout_constraintLeft_toLeftOf="@id/viewRecordSlider"
+        app:layout_constraintTop_toTopOf="@id/viewRecordSlider"
+        app:srcCompat="@drawable/ic_mic_red" />
+
+    <ImageView
+        android:id="@+id/ivTrashBin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp18"
+        android:layout_marginLeft="@dimen/dp18"
+        android:contentDescription="@string/app_name"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/viewRecordSlider"
+        app:layout_constraintLeft_toLeftOf="@id/viewRecordSlider"
+        app:layout_constraintTop_toTopOf="@id/viewRecordSlider"
+        app:srcCompat="@drawable/ic_animated_basket" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginLeft="@dimen/dp8"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorDefaultChronometerColor"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/viewRecordSlider"
+        app:layout_constraintLeft_toRightOf="@id/ivTrashBin"
+        app:layout_constraintTop_toTopOf="@id/viewRecordSlider" />
+
+    <com.mmbarno.recordingview.RecordButton
+        android:id="@+id/recordBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp2"
+        android:layout_marginEnd="@dimen/dp8"
+        android:layout_marginRight="@dimen/dp8"
+        android:layout_marginBottom="@dimen/dp2"
+        android:background="@drawable/shape_circle_6200ee"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="W, 1:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_mic_white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

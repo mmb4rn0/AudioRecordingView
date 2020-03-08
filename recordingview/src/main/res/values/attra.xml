@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RecordView">
+        <attr name="rv_slider_bg" format="reference|color" />
+        <attr name="rv_shimmer_color" format="color" />
+        <attr name="rv_sliding_text" format="string" localization="suggested" />
+        <attr name="rv_sliding_text_color" format="color" />
+        <attr name="rv_idle_text" format="string" localization="suggested" />
+        <attr name="rv_idle_text_color" format="color" />
+        <attr name="rv_show_swiss_view" format="boolean" />
+        <attr name="rv_swiss_view_bg" format="reference|color" />
+        <attr name="rv_swiss_view_src" format="reference" />
+        <attr name="rv_time_text_color" format="color" />
+        <attr name="rv_record_btn_bg" format="reference|color" />
+        <attr name="rv_record_btn_src" format="reference" />
+    </declare-styleable>
+</resources>
